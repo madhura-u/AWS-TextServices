@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> 2048041 Cloud Assignment </title>
+        <link rel="stylesheet" href="{{ url_for('static',filename='styles/styles.css')}}"> </link>
+    </head>
+    
+
+        <div class="container">
+            <div class="content" align="center">
+                <center>
+                    <table border=0 alignment=center>
+
+                        <tr>
+                            <td colspan="3">  
+                                <h2 align=center> AWS Text services</h2> <br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"> 
+                                <form method="post">
+                                    <textarea class=content placeholder="Type here" data-sb-validations="required" name="texttospeech"></textarea>
+                            </td>
+                        </tr><br>
+                        <tr>
+<td>
+                                <button type="submit" class=content formaction="/translation">Translate to Kannada</button> 
+                            </td>
+                            <td>
+                                <button type="submit" class=content formaction="/sound">Convert to mp3</button>
+                            </td>
+                           
+                            
+                        </tr> 
+                                </form>
+                        <tr>
+                            <td colspan="3"> <br>
+                                {% if conversion%}
+                                    <h4 class="section-heading">{{ conversion }} <a class=content href="{{ url_for('static', filename='audio/speech.mp3') }}" download>Download</a></h4>
+                                {% endif %}
+{% if trans%}
+                                    <h4> TRANSLATED TEXT IS:  {{ trans }} </h4>
+                                {% endif %}
+                            </td>
+                        </tr> 
+                        <tr>
+                            <td colspan="3">
+
+
+<br>
+                                <h6 > Project by: Madhura K R <br> Services intergrated: Amazon Polly (Text-to-Speech),  <br> Amazon Translate (Translation) </h6>
+                            </td>
+                        </tr>
+                    </table>
+                </center>
+            </div>
+        </div><br>
+    </body>
+</html>
